@@ -3,7 +3,7 @@
 Simple search engine for [Refinery CMS](http://refinerycms.com).
 By default it supports search in `Refinery::Page`, and `Refinery::Blog::Post` (if installed), but it can be easily configured for other Rails models too.
 
-This version of `refinerycms-search` supports Refinery 3.x and Rails 4.1.x.
+This version of `refinerycms-search` supports Refinery 4.x and Rails 5.1.x.
 For Refinery 2.1.x and Rails 3.x, use the [2-1-stable branch](http://github.com/refinery/refinerycms-search/tree/2-1-stable).
 
 Powered by: [acts_as_indexed](https://github.com/dougal/acts_as_indexed) and [refinerycms-acts-as-indexed](https://github.com/refinery/refinerycms-acts-as-indexed) -
@@ -23,7 +23,7 @@ What it can't do :
 
 ## Requirements
 
-Refinery CMS version 3.0.0 or above.
+Refinery CMS version 4.0.0 or above.
 
 ## Installation
 
