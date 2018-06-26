@@ -1,13 +1,17 @@
-Refinery::User.all.each do |user|
-  if user.plugins.where(name: 'refinerycms_search').blank?
-    user.plugins.create(name: "refinerycms_search",
-                        position: (user.plugins.maximum(:position) || -1) +1)
+if defined?(Refinery::Authentication::Devise::User)
+  Refinery::Authentication::Devise::User.all.each do |user|
+    if user.plugins.where(name: 'refinerycms_search').blank?
+      user.plugins.create(name: 'refinerycms_search',
+                          position: (user.plugins.maximum(:position) || -1) + 1)
+    end
   end
-end if defined?(Refinery::User)
+end
 
-if defined?(Refinery::Page) and !Refinery::Page.exists?(link_url: (url = Refinery::Search.page_url))
+if defined?(Refinery::Page) && !Refinery::Page.exists?(
+  link_url: (url = Refinery::Search.page_url)
+)
   page = Refinery::Page.create(
-    title: "Search",
+    title: 'Search',
     link_url: url,
     deletable: false,
     menu_match: "^#{url}?(\/|\/.+?|)$"
